@@ -18,7 +18,17 @@ function ticketPriceCalculator(
   return price * km * discount;
 }
 
-const ticketForm = document.getElementById("tickeForm");
+const ticketForm = document.getElementById("ticket-form");
 const ageInput = document.getElementById("age-input");
 const kilometersInput = document.getElementById("kilometers-input");
 const resultDisplay = document.getElementById("result");
+
+ticketForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const age = parseInt(ageInput.value);
+  const km = parseInt(kilometersInput.value);
+
+  const totalPrice = ticketPriceCalculator(age, km);
+  resultDisplay.innerText = totalPrice.toFixed(2);
+});
