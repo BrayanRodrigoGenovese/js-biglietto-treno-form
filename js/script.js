@@ -17,3 +17,8 @@ function ticketPriceCalculator(
   const discount = age >= 65 ? seniorPrice : age < 18 ? juniorPrice : 1;
   return price * km * discount;
 }
+
+const ticketForm = document.getElementById("tickeForm");
+const ageInput = document.getElementById("age-input");
+const kilometersInput = document.getElementById("kilometers-input");
+const resultDisplay = document.getElementById("result");
