@@ -29,6 +29,8 @@ ticketForm.addEventListener("submit", function (event) {
   const age = parseInt(ageInput.value);
   const km = parseInt(kilometersInput.value);
 
-  const totalPrice = ticketPriceCalculator(age, km);
-  resultDisplay.innerText = totalPrice.toFixed(2);
+  const totalPrice = ticketPriceCalculator(age, km).toFixed(2);
+
+  console.log(`result: ${totalPrice} €`);
+  resultDisplay.innerText = totalPrice;
 });
