@@ -8,14 +8,16 @@
 </head>
 
 <body>
-    <label for="ageInput">
-        age: <input id="age-input" type="number" min="0" />
-    </label>
-    <label for="kilometers-input">
-        kilometers: <input id="kilometers-input" type="number" min="0" />
-    </label>
-    <input type="submit" value="Calculate" />
-    <div>result:</div>
+    <form id="ticket-form">
+        <label for="age-input">
+            age: <input id="age-input" type="number" min="0" max="123" />
+        </label>
+        <label for="kilometers-input">
+            kilometers: <input id="kilometers-input" type="number" min="0" max="1400" />
+        </label>
+        <input type="submit" value="Calculate" />
+        <div>result: <span id="result">0.00</span> €</div>
+    </form>
     <script src="js/script.js"></script>
 </body>
 
