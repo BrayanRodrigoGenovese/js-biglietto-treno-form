@@ -24,27 +24,25 @@ const ageInput = document.getElementById("age-input");
 const kilometersInput = document.getElementById("kilometers-input");
 const resultDisplay = document.getElementById("result");
 
-let codeCP = Math.floor(Math.random() * 100000);
-
 const tableBody = document.getElementById("table-body");
 
 ticketForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
   const age = parseInt(ageInput.value);
-  const ticketType = age >= 65 ? "Senior" : age < 18 ? "Junior" : "Standard";
   const km = parseInt(kilometersInput.value);
-  codeCP += 1;
+  const ticketType = age >= 65 ? "Senior" : age < 18 ? "Junior" : "Standard";
+  const wagon = Math.floor(Math.random() * 8);
+  const codeCP = Math.floor(Math.random() * 100000);
 
   const totalPrice = ticketPriceCalculator(age, km).toFixed(2);
 
   console.log(`result: ${totalPrice} €`);
-  resultDisplay.innerText = totalPrice;
 
   tableBody.innerHTML += `<tr>
                 <td>${fullNameInput.value}</td>
                 <td>${ticketType} ticket</td>
-                <td>5</td>
+                <td>${wagon}</td>
                 <td>${codeCP}</td>
                 <td>${totalPrice}</td>
             </tr>`;
